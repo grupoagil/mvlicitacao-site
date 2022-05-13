@@ -1,0 +1,122 @@
+RewriteEngine On 
+RewriteBase / 
+
+########################
+#	 SCRIPTS
+########################
+# COLOQUE AQUI O QUE VOCÊ PRECISA PARA RODAR SEUS SCRIPTS (ROUTER  URL AMIGÁVEL / REDIRECIONAMENTO / ETC
+
+
+########################
+#	SECURITY
+########################
+
+
+# AWAYS REDIRECT TO HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L]
+
+# ALLOW ONLY NECESSARY REQUEST METHODS
+RewriteCond %{REQUEST_METHOD} !^(GET|POST) [NC]
+RewriteRule .* - [F,L]
+
+# PROTECT GLOBAL VARIABLES
+RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+RewriteRule .* index.php [F,L]
+
+# Block suspicious user agents and requests
+#RewriteCond %{HTTP_USER_AGENT} (libwww-perl|wget|python|nikto|curl|scan|java|winhttp|clshttp|loader) [NC,OR]
+#RewriteCond %{HTTP_USER_AGENT} (<|>|'|%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
+#RewriteCond %{HTTP_USER_AGENT} (;|<|>|'|"|\)|\(|%0A|%0D|%22|%27|%28|%3C|%3E|%00).*(libwww-perl|wget|python|nikto|curl|scan|java|winhttp|HTTrack|clshttp|archiver|#loader|email|harvest|extract|grab|miner) [NC,OR]
+#RewriteCond %{THE_REQUEST} \?\ HTTP/ [NC,OR]
+#RewriteCond %{THE_REQUEST} \/\*\ HTTP/ [NC,OR]
+#RewriteCond %{THE_REQUEST} etc/passwd [NC,OR]
+#RewriteCond %{THE_REQUEST} cgi-bin [NC,OR]
+#RewriteCond %{THE_REQUEST} (%0A|%0D) [NC,OR]
+#RewriteRule .* - [F,L]
+
+# Block MySQL injections, RFI, base64, etc.
+#RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=http:// [OR]
+#RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=9%2F [OR]
+#RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=(\.\.//?)+ [OR]
+#RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=/([a-z0-9_.]//?)+ [NC,OR]
+#RewriteCond %{QUERY_STRING} \=PHP[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} [NC,OR]
+#RewriteCond %{QUERY_STRING} (\.\./|\.\.) [OR]
+#RewriteCond %{QUERY_STRING} ftp\: [NC,OR]
+#RewriteCond %{QUERY_STRING} http\: [NC,OR]
+#RewriteCond %{QUERY_STRING} https\: [NC,OR]
+#RewriteCond %{QUERY_STRING} \=\|w\| [NC,OR]
+#RewriteCond %{QUERY_STRING} ^(.*)/self/(.*)$ [NC,OR]
+#RewriteCond %{QUERY_STRING} ^(.*)cPath=http://(.*)$ [NC,OR]
+#RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+#RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
+#RewriteCond %{QUERY_STRING} (\<|%3C).*iframe.*(\>|%3E) [NC,OR]
+#RewriteCond %{QUERY_STRING} (<|%3C)([^i]*i)+frame.*(>|%3E) [NC,OR]
+#RewriteCond %{QUERY_STRING} base64_encode.*\(.*\) [NC,OR]
+#RewriteCond %{QUERY_STRING} base64_(en|de)code[^(]*\([^)]*\) [NC,OR]
+#RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+#RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2}) [OR]
+#RewriteCond %{QUERY_STRING} ^.*(\[|\]|\(|\)|<|>).* [NC,OR]
+#RewriteCond %{QUERY_STRING} (NULL|OUTFILE|LOAD_FILE) [OR]
+#RewriteCond %{QUERY_STRING} (\./|\../|\.../)+(motd|etc|bin) [NC,OR]
+#RewriteCond %{QUERY_STRING} (localhost|loopback|127\.0\.0\.1) [NC,OR]
+#RewriteCond %{QUERY_STRING} (<|>|'|%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
+#RewriteCond %{QUERY_STRING} concat[^\(]*\( [NC,OR]
+#RewriteCond %{QUERY_STRING} union([^s]*s)+elect [NC,OR]
+#RewriteCond %{QUERY_STRING} union([^a]*a)+ll([^s]*s)+elect [NC,OR]
+#RewriteCond %{QUERY_STRING} (;|<|>|'|"|\)|%0A|%0D|%22|%27|%3C|%3E|%00).*(/\*|union|select|insert|drop|delete|update|cast|create|char|convert|alter|declare|order|script|set|md5|benchmark|encode) [NC,OR]
+#RewriteRule .* - [F,L]
+
+# PHP-CGI Vulnerability
+#RewriteCond %{QUERY_STRING} ^(%2d|\-)[^=]+$ [NC,OR]
+#RewriteRule .* - [F,L]
+
+#proc/self/environ? no way!
+#RewriteCond %{QUERY_STRING} proc\/self\/environ [NC,OR]
+#RewriteRule .* - [F,L]
+
+# NO SP_EXECUTESQL
+#RewriteCond %{QUERY_STRING} (sp_executesql) [NC]
+#RewriteRule ^(.*)$ - [F,L]
+
+########################
+#	MODULES
+########################
+
+<IfModule mod_headers.c>
+	Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+#	Header set Content-Security-Policy "connect-src 'none'"
+	Header set Referrer-Policy "no-referrer-when-downgrade"
+	Header set X-Content-Type-Options "nosniff"
+#	Header set X-XSS-Protection "1; mode=block"
+	Header set X-Frame-Options "DENY"
+	Header always set feature-policy "accelerometer 'none'; ambient-light-sensor 'none'; autoplay 'self'; camera 'none'; encrypted-media 'none'; fullscreen 'none'; geolocation 'none'; gyroscope 'none'; microphone 'none'; midi 'none'; picture-in-picture 'none'; speaker 'none'; usb 'none';"
+</IfModule>
+
+<IfModule mod_security.c>
+         SecFilterEngine On						# ^Turn the filtering engine On or Off
+         SecFilterScanPOST On						# ^Should mod_security inspect POST payloads
+         SecFilterSelective "HTTP_USER_AGENT|HTTP_HOST" "^$"		# ^Require HTTP_USER_AGENT and HTTP_HOST in all requests
+         SecFilter "../"						# ^Prevent path traversal (..) attacks
+         SecFilter "<[[:space:]]*script"				# ^Weaker XSS protection but allows common HTML tags
+         SecFilter "<(.|n)+>"						# ^Prevent XSS atacks (HTML/Javascript injection)
+         SecFilter "delete[[:space:]]+from"
+         SecFilter "insert[[:space:]]+into"
+         SecFilter "select.+from"
+         SecFilter "drop[[:space:]]table"				# ^Very crude filters to prevent SQL injection attacks
+         SecFilterSelective ARG_PHPSESSID "!^[0-9a-z]*$"
+         SecFilterSelective COOKIE_PHPSESSID "!^[0-9a-z]*$"		# ^Protecting from XSS attacks through the PHP session cookie
+         SecFilterDefaultAction "deny,log,status:500"			# ^Action to take by default  
+</IfModule>
+
+########################
+#	 VERSION
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php73” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php73 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

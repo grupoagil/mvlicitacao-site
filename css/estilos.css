@@ -1,0 +1,413 @@
+.owl-carousel .item {
+	position:relative; 
+	z-index:100; 
+	-webkit-backface-visibility:hidden;
+	backface-visibility:hidden;
+}
+
+
+
+
+
+
+
+
+
+#quatro-ferramentas {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 70px 0;
+    background: #0d1721;
+}
+
+#quatro-ferramentas h1 {
+    font-size: 40px;
+    line-height: 50px;
+    color: #fff;
+    font-weight: 700;
+    margin: 0 0 50px 0;
+    padding: 0;
+}
+
+#ct-ferramentas {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.boxs-ferramentas {
+    width: 23%;
+    min-height: 360px;
+    color: #fff;
+    background: #016d95;
+    padding: 20px;
+}
+
+.boxs-ferramentas h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.boxs-ferramentas p {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 300;
+}
+
+
+
+
+
+#depoimentos {
+    width: 100%;
+    height: auto;
+    padding: 70px 0 140px 0;
+    background: #f8f5fc;
+}
+
+#depoimentos h1 {
+    text-align: center;
+    font-size: 40px;
+    line-height: 50px;
+    color: #354785;
+    font-weight: 700;
+    margin: 0 0 50px 0;
+    padding: 0;
+}
+
+.aspas {
+    width: 52px;
+    height: 42px;
+    margin-bottom: 20px;
+    background: url("../images/aspas.png") center;
+}
+
+.box-depoimemto {
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+
+.box-depoimemto p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #3e4042;
+}
+
+.box-depoimemto strong {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #00bbff;
+    font-size: 20px;
+    display: block;
+    margin-top: 30px;
+}
+
+.box-depoimemto small {
+    color: #3e4042;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+
+#depoimentos .owl-nav > div {position:absolute; bottom: -80px;}
+#depoimentos .owl-nav i {
+    color:#00bbff;
+    border: 1px solid #e2e0e5; 
+    width: 50px; 
+    height: 50px;
+    display: block;
+    background: #fff;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 22px;
+    transition: .5s;
+}
+#depoimentos .owl-nav i:hover {
+    background: #00bbff;
+    color: #fff;
+}
+#depoimentos .owl-nav .owl-prev {right:55px;}
+#depoimentos .owl-nav .owl-next {right:0;}
+
+
+
+
+
+
+
+
+
+
+#parceiros {
+    width: 100%;
+    height: auto;
+    padding: 70px 0 90px 0;
+    background: #fff;
+}
+
+#parceiros h1 {
+    color: #354785;
+    font-size: 40px;
+    line-height: 50px;
+    font-weight: 700;
+}
+
+#parceiros h3 {
+    font-size: 16px;
+    color: #484848;
+    font-weight: 400;
+    margin: 10px 0 70px 0;
+    display: block;
+}
+
+.crsl-parceiros {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+#parceiros .owl-nav > div {position:absolute; top:45%;}
+#parceiros .owl-nav i {font-size:30px; color: #354785;}
+#parceiros .owl-nav .owl-prev {left:-25px; text-align:left;}
+#parceiros .owl-nav .owl-next {right:-25px; text-align:right;}
+
+
+
+
+
+
+
+
+
+
+#ct-contato {
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 3px 25px 0px rgba(50, 50, 50, 0.2);
+    margin-bottom: -200px;
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+
+#info-contato {
+    width: 40%;
+    padding: 50px 40px;
+    background: url("../images/bg-ctt.png") center;
+    background-size: cover;
+}
+
+#info-contato h1 {
+    color: #fff;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.info-box-ctt {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-ctt {
+    width: 15%;
+    text-align: center;
+}
+
+.info-box-ctt span {
+    width: 85%;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+
+
+
+#form-contato {
+    width: 60%;
+    color: #fff;
+    background: #0d1721;
+    padding: 50px 0;
+}
+
+#form-contato form {
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+#form-contato input {
+    padding: 0 20px;
+    height: 50px;
+    border-radius: 3px;
+    border: 0;
+    margin: 0 0 15px 0;
+}
+
+#form-contato button {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    background-color: #00bbff;
+    border: 0;
+    margin-top: 20px;
+    transition: .5s;
+}
+
+#form-contato button:hover {
+    background: #00e1ff;
+    cursor: pointer;
+}
+
+#form-contato h3 {
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    max-width: 80%;
+    margin: 0 auto 30px auto;
+}
+
+
+#map {
+    width: 100%;
+    height: auto;
+    margin-bottom: -6px;
+}
+
+
+
+
+
+@media screen and (max-width: 990px) { 
+
+    #quatro-ferramentas h1 {
+        font-size: 30px;
+        line-height: 40px;
+        margin: 0 0 50px 0;
+    }
+
+    #quatro-ferramentas h1 br {
+        display: none;
+    }
+
+    #ct-ferramentas {
+        flex-wrap: wrap;
+    }
+
+
+    .boxs-ferramentas {
+        width: 49%;
+        min-height: 360px;
+        margin-bottom: 2%;
+    }
+
+    .boxs-ferramentas h3 br {
+        display: none;
+    }
+
+    
+
+    
+    #depoimentos h1 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    
+   
+   
+
+    #parceiros {
+        padding: 70px 0;
+    }
+
+    #parceiros h1 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    #parceiros h3 {
+        font-size: 15px;
+    }
+
+    #parceiros br {
+        display: none;
+    }
+
+    .crsl-parceiros {
+        max-width: 85%;
+        margin: 0 auto;
+    }
+
+    #parceiros .owl-nav > div {position:absolute; top:30%;}
+    #parceiros .owl-nav .owl-prev {left: -15px; text-align:left;}
+    #parceiros .owl-nav .owl-next {right: -15px; text-align:right;}
+
+
+    
+    #ct-contato {
+        flex-direction: column;
+    }
+
+
+    #info-contato {
+        width: 100%;
+        padding: 50px 40px;
+        background: url("../images/bg-ctt.png") center;
+        background-size: cover;
+    }
+
+    #info-contato h1 {
+        color: #fff;
+        font-size: 30px;
+    }
+
+
+
+    #form-contato {
+        width: 100%;
+    }
+
+    #form-contato h3 {
+        font-size: 20px;
+    }
+
+    
+}
+
+
+
+
+
+@media screen and (max-width: 500px) {
+    .boxs-ferramentas {
+        width: 100%;
+        min-height: 100px;
+    }
+ }
