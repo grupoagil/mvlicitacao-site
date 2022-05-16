@@ -11,7 +11,7 @@ use PHPMailer\PHPMailer\SMTP;
 //This should be done in your php.ini, but this is how to do it if you don't have access to that
 date_default_timezone_set('Etc/UTC');
 
-require '../vendor/autoload.php';
+require 'vendor/autoload.php';
 
 //Create a new PHPMailer instance
 $mail = new PHPMailer;
