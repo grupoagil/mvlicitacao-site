@@ -23,15 +23,15 @@ $mail->isSMTP();
 // SMTP::DEBUG_SERVER = client and server messages
 // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 //Set the hostname of the mail server
-$mail->Host = 'mail.mvlicitacoes.com.br';
+$mail->Host = '127.0.0.1';
 //Set the SMTP port number - likely to be 25, 465 or 587
-$mail->Port = 25;
+$mail->Port = 587;
 //Whether to use SMTP authentication
 $mail->SMTPAuth = true;
 //Username to use for SMTP authentication
-$mail->Username = 'contato@mvlicitacoes.com.br';
+$mail->Username = 'sistema@alerta.mvlicitacoes.com';
 //Password to use for SMTP authentication
-$mail->Password = 'd56CBBNcpkt2tR2';
+$mail->Password = '12345678';
 //Set who the message is to be sent from
 $mail->setFrom('comercial@mvlicitacoes.com', 'MV');
 //Set an alternative reply-to address
