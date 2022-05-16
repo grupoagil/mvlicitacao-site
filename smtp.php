@@ -44,7 +44,7 @@ $mail->Subject  = "Quero receber minha pre-analise";
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 
-$mail->Body = '<p><b>Nome:</b> '.$_POST['recno1'].'<p><b>Email:</b> '.$_POST['recma2'].'<p><b>CNPJ:</b> '.$_POST['recem3'].'<p><b>Telefone:</b> '.$_POST['recte4'].'<p><b>Tipo de material ou serviço:</b> '.$_POST['recra5'].'';
+$mail->Body = '<p><b>Nome:</b> '.((isset($_POST['recno1']))?$_POST['recno1']:'').'<p><b>Email:</b> '.((isset($_POST['recma2']))?$_POST['recma2']:'').'<p><b>CNPJ:</b> '.((isset($_POST['recem3']))?$_POST['recem3']:'').'<p><b>Telefone:</b> '.((isset($_POST['recte4']))?$_POST['recte4']:'').'<p><b>Tipo de material ou serviço:</b> '.((isset($_POST['recra5']))?$_POST['recra5']:'').'';
 
 //Replace the plain text body with one created manually
 $mail->AltBody = 'This is a plain-text message body';
