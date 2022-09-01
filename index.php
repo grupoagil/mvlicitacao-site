@@ -1472,7 +1472,7 @@ viewBox="0 0 44.92 9.5"
                     <div class="icon-ctt">
                         <img src="images/icon-ctt04.png">
                     </div>
-                    <span>Av. Rômulo Maiorana, 700 Ed. Vitta Office - Sala 1211, CEP 66093-005 Belém - Pará, Brasil</span>
+                    <span>Ed. Village Empresarial, Salas 801 e 802. Rua Domingos Marreiros, 49, Umarizal, CEP 66.055-210, Belém/PA.</span>
                 </div>
                    
             </div>
@@ -1512,7 +1512,7 @@ viewBox="0 0 44.92 9.5"
 
 
 <div id="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.557315012086!2d-48.4668990858981!3d-1.4405587362186245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a48c16cf9a565b%3A0x9143ccbab184b6e2!2sEd.%20Torre%20Vitta%20Office!5e0!3m2!1spt-BR!2sbr!4v1606626245015!5m2!1spt-BR!2sbr" width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.5460019019124!2d-48.48905788576616!3d-1.4470066362294614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92a48e99b1d7f377%3A0x4ccf4a9e7b93766f!2sEdif%C3%ADcio%20Village%20Empresarial!5e0!3m2!1spt-BR!2sbr!4v1662050617421!5m2!1spt-BR!2sbr" width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 </div>
 
 
