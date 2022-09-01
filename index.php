@@ -246,7 +246,7 @@ viewBox="0 0 44.92 9.5"
 
                 <div class="row">
 
-                    <div class="col-lg-6 offset-lg-6 col-xl-5 offset-xl-7">
+                    <!-- <div class="col-lg-6 offset-lg-6 col-xl-5 offset-xl-7">
 
                         <div class="banner_content">
 
@@ -258,7 +258,7 @@ viewBox="0 0 44.92 9.5"
 
                         </div>
 
-                    </div>
+                    </div> -->
 
 
 
